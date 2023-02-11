@@ -5,7 +5,11 @@ export default function Home() {
   return (
     <>
 
-      <Layout>
+      <Layout
+        
+        title={"Inicio"}
+        description={"Guitar los Angeles, Venta de guitarras, Blog de música y más"}
+      >
         
         <h1>Hola Mundo en Next</h1>
 

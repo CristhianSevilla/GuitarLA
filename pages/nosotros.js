@@ -6,7 +6,10 @@ function Nosotros() {
 
         <>
 
-            <Layout>
+            <Layout
+                title={'Nosotros'}
+                description={'Acerca de nosotros, Guitar los Angeles, tienda de música'}
+            >
 
                 <div>Nosotros</div>
 
