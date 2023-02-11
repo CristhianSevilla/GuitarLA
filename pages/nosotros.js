@@ -1,4 +1,3 @@
-import Link from 'next/Link'
 import Layout from '@/components/layout'
 
 function Nosotros() {
@@ -13,7 +12,6 @@ function Nosotros() {
 
                 <div>Nosotros</div>
 
-                <Link href="/">Inicio</Link>
 
             </Layout>
 
