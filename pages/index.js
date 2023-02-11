@@ -11,8 +11,6 @@ export default function Home() {
         description={"Guitar los Angeles, Venta de guitarras, Blog de música y más"}
       >
         
-        <h1>Hola Mundo en Next</h1>
-
         <Link href="/nosotros" >Nosotros</Link>
 
       </Layout>

@@ -1,6 +1,8 @@
 import Head from "next/head"
+import Header from "./header"
+import Footer from "./footer"
 
-const Layout = ({children, title = '', description = ''}) => {
+const Layout = ({ children, title = '', description = '' }) => {
   return (
     <>
 
@@ -11,9 +13,12 @@ const Layout = ({children, title = '', description = ''}) => {
 
       </Head>
 
-        <h1>Desde Layout</h1>
+      <Header />
 
-        {children}
+      {children}
+
+      <Footer />
+      
     </>
   )
 }
