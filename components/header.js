@@ -7,7 +7,7 @@ function Header() {
   return (
 
     <header className= {styles.header}>
-      <div className="contenedor">
+      <div className={`contenedor ${styles.barra}`}>
 
         <Image src='/img/logo.svg' width={300} height={40} alt='logotipo GuitarLa' />
 
