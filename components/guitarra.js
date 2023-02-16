@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import styles from '../styles/guitarras.module.css'
 
 function Guitarra({ guitarra }) {
 
@@ -7,19 +8,18 @@ function Guitarra({ guitarra }) {
 
     return (
         <>
-            <div>
+            <div className={styles.guitarra}>
                 <Image src={imagen.data.attributes.formats.medium.url} width={400} height={400} alt={`Imagen de la guitarra ${nombre}`} />
 
-                <div>
-                    <div>{nombre}</div>
-                    <div>{descripcion}</div>
-                    <div>${precio}</div>
-                    <Link href={`guitarras/${url}`}>
+                <div className={styles.contenido}>
+                    <h3>{nombre}</h3>
+                    <p className={styles.descripcion}>{descripcion}</p>
+                    <p className={styles.precio} >${precio}</p>
+                    <Link className={styles.enlace} href={`guitarras/${url}`}>
                         Ver producto
                     </Link>
-
-
                 </div>
+
             </div>
 
         </>
