@@ -1,7 +1,7 @@
 import Layout from '@/components/layout'
-import ListadoGuitarras from '../components/listado-guitarrras'
+import Guitarra from '../components/guitarra'
 
-function Tienda({guitarras}) {
+function Tienda({ guitarras }) {
 
 
     return (
@@ -16,9 +16,12 @@ function Tienda({guitarras}) {
                 <main className="contenedor">
                     <h1 className="heading">Nuestra Colección</h1>
 
-                    <ListadoGuitarras
-
-                    />
+                    {guitarras.map(guitarra => (
+                        <Guitarra
+                            key={guitarra.id}
+                            guitarra={guitarra.attributes}
+                        />
+                    ))}
 
                 </main>
 
@@ -35,27 +38,13 @@ export default Tienda
 
 //Consultar la Api
 
-//Es una generacion estatica, es decir la información no se va a estar regenerando con cada visita de usuario sino que va a ser en el build
-
-// export async function getStaticProps(){
-
-//     const respuesta = await fetch(`${process.env.API_URL}/api/guitarras?populate=imagen`)
-//     const {data: guitarras} = await respuesta.json()
-
-//     return{
-//         props:{
-//             guitarras
-//         }
-//     }
-// }
-
-export async function getServerSideProps(){
+export async function getServerSideProps() {
 
     const respuesta = await fetch(`${process.env.API_URL}/api/guitarras?populate=imagen`)
-    const {data: guitarras} = await respuesta.json()
+    const { data: guitarras } = await respuesta.json()
 
-    return{
-        props:{
+    return {
+        props: {
             guitarras
         }
     }
