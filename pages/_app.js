@@ -43,10 +43,25 @@ export default function App({ Component, pageProps }) {
     }
   }
 
+
+  const actualizarCantidad = guitarra => {
+    const carritoActualizado = carrito.map( guitarraState => {
+      if(guitarraState.id === guitarra.id ) {
+        guitarraState.cantidad = parseInt( guitarra.cantidad )
+      } 
+      return guitarraState
+    })
+    
+    setCarrito(carritoActualizado)
+
+    window.localStorage.setItem('carrito', JSON.stringify( carrito ));
+  }
+
+
   return <Component {...pageProps}
     carrito={carrito}
     agregarCarrito={agregarCarrito}
+    actualizarCantidad={actualizarCantidad}
     // eliminarProducto={eliminarProducto}
-    // actualizarCantidad={actualizarCantidad}
   />
 }

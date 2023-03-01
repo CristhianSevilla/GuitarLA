@@ -4,7 +4,7 @@ import Producto from "./guitarras/[url]"
 import Image from "next/image"
 
 
-function Carrito({ carrito }) {
+function Carrito({ carrito, actualizarCantidad }) {
     return (
         <Layout
             title="Carrito de compras"
@@ -25,8 +25,25 @@ function Carrito({ carrito }) {
                                         <Image width={250} height={400} src={producto.imagen} alt={`Guitarra ${producto.nombre}`} />
                                     </div>
                                     <div>
-                                        <p>Guitarra: <span className={styles.nombre}>{producto.nombre}</span></p>
+                                        <p><span className={styles.nombre}>{producto.nombre}</span></p>
                                         <p>Precio: <span className={styles.precio} >${producto.precio}</span></p>
+                                        <div className={styles.cantidad} >
+                                            <p>Cantidad: </p>
+                                            <select
+                                                className={styles.select}
+                                                onChange={e => actualizarCantidad({
+                                                    id:producto.id,
+                                                    cantidad: +e.target.value,
+                                                })}
+                                                value={producto.cantidad}
+                                            >
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
                                         <p className={styles.subtotal}>Subtotal: <span>${producto.cantidad * producto.precio}</span></p>
 
                                     </div>
