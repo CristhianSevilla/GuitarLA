@@ -25,10 +25,9 @@ function Carrito({ carrito }) {
                                         <Image width={250} height={400} src={producto.imagen} alt={`Guitarra ${producto.nombre}`} />
                                     </div>
                                     <div>
-                                        <p className={styles.nombre} >{`Guitarra: ${producto.nombre}`}</p>
-                                        <p className={styles.precio} >Precio: $<span>{producto.precio}</span></p>
-                                        <p className={styles.cantidad} >Cantidad: {producto.cantidad}</p>
-                                        <p className={styles.subtotal}>Subtotal: $<span>{producto.cantidad * producto.precio}</span></p>
+                                        <p>Guitarra: <span className={styles.nombre}>{producto.nombre}</span></p>
+                                        <p>Precio: <span className={styles.precio} >${producto.precio}</span></p>
+                                        <p className={styles.subtotal}>Subtotal: <span>${producto.cantidad * producto.precio}</span></p>
 
                                     </div>
                                 </div>
