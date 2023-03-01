@@ -12,10 +12,25 @@ export default function Producto({ guitarra }) {
     const handleSubmit = e => {
         e.preventDefault()
 
+        //Validar cantidad
         if (cantidad < 1) {
             alert('Cantidad no valida')
             return
         }
+
+        //Construir un objeto con la guitarra seleccionada y almacenarla en LocaleStorage para no estra haciendo tabtas peticiones a nuestra API
+
+        const guitarraSeleccionada ={
+
+            id: guitarra[0].id,
+            imagen: imagen.data.attributes.url,
+            nombre,
+            precio,
+            cantidad,
+        }//En el caso de nombre, precio y cantidad la llave y el valor se llaman igual asi que solo se pone una vez
+
+        //Pasar el Objeto al context
+        
     }
 
     return (
