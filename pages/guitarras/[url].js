@@ -3,7 +3,7 @@ import Image from "next/image"
 import styles from "../../styles/guitarras.module.css"
 import Layout from "@/components/layout"
 
-export default function Producto({ guitarra }) {
+export default function Producto({ guitarra, agregarCarrito }) {
 
     const [cantidad, setCantidad] = useState(0)
 
@@ -30,6 +30,7 @@ export default function Producto({ guitarra }) {
         }//En el caso de nombre, precio y cantidad la llave y el valor se llaman igual asi que solo se pone una vez
 
         //Pasar el Objeto al context
+        agregarCarrito(guitarraSeleccionada)
         
     }
 
