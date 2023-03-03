@@ -1,10 +1,19 @@
+import { useState, useEffect } from "react";
 import Layout from "@/components/layout"
 import styles from "../styles/carrito.module.css"
-import Producto from "./guitarras/[url]"
 import Image from "next/image"
 
 
-function Carrito({ carrito, actualizarCantidad }) {
+function Carrito({ carrito, actualizarCantidad, eliminarProducto }) {
+
+    const [ total, setTotal ] = useState(0)
+
+    useEffect(() => {
+        // reduce es un array method que calcula un total y toma dos parametros el total global y el producto actual, es de los pocos metodos que se pueden usar con un arrow function
+        const calculoTotal = carrito.reduce( (total, producto) => total + (producto.cantidad * producto.precio), 0)
+        setTotal(calculoTotal)
+    }, [carrito])
+
     return (
         <Layout
             title="Carrito de compras"
@@ -45,8 +54,16 @@ function Carrito({ carrito, actualizarCantidad }) {
                                             </select>
                                         </div>
                                         <p className={styles.subtotal}>Subtotal: <span>${producto.cantidad * producto.precio}</span></p>
-
                                     </div>
+
+                                    <button
+                                        className={styles.eliminar}
+                                        type='button'
+                                        onClick={() => eliminarProducto(producto.id)}
+                                    >
+                                        x
+                                    </button>
+
                                 </div>
                             ))
 
@@ -56,7 +73,7 @@ function Carrito({ carrito, actualizarCantidad }) {
 
                     <aside className={styles.resumen}>
                         <h3>Resumen del pedido</h3>
-                        <p>Total a pagar:</p>
+                        <p>Total a pagar: ${total}</p>
                     </aside>
                 </div>
             </main>

@@ -7,8 +7,6 @@ import Curso from "@/components/curso"
 
 export default function Home({ guitarras, posts, curso }) {
 
-  console.log(curso);
-
   return (
     <>
 

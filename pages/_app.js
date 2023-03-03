@@ -57,11 +57,16 @@ export default function App({ Component, pageProps }) {
     window.localStorage.setItem('carrito', JSON.stringify( carrito ));
   }
 
+  const eliminarProducto = id => {
+    const carritoActualizado = carrito.filter( producto => producto.id != id)
+    setCarrito(carritoActualizado)
+    window.localStorage.setItem('carrito', JSON.stringify( carrito ));
+}
 
   return <Component {...pageProps}
     carrito={carrito}
     agregarCarrito={agregarCarrito}
     actualizarCantidad={actualizarCantidad}
-    // eliminarProducto={eliminarProducto}
+    eliminarProducto={eliminarProducto}
   />
 }

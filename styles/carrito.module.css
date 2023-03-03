@@ -6,6 +6,7 @@
 @media(min-width: 768px) {
     .contenido {
         grid-template-columns: 3fr 2fr;
+        gap: 5rem;
     }
 }
 
@@ -20,6 +21,7 @@
     align-items: center;
     padding: 3rem 0;
     border-bottom: 1px solid #cfcfcf;
+    position: relative;
 }
 
 .producto:last-of-type {
@@ -46,24 +48,30 @@
     border-radius: 1rem;
     width: 100%;
 }
-
 .precio {
     margin-top: 2rem;
     font-weight: 700;
     color: var(--primary);
 }
-
 .subtotal {
     font-size: 2.2rem;
+    padding-top: 1rem;
 }
-
-
-
-
-
-
 .resumen {
     background-color: #e7e7e7;
     padding: 3rem;
     border-radius: 1rem;
+/* sticky mantiene el elemento en su posicion natural pero una vez que tenga que dejar de ser visible lo va a mantener 3rem abajo de la parte superior  */
+    position: sticky;
+    top: 3rem;
+}
+.eliminar{
+    all: unset;
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    font-weight: 900;
+}
+.eliminar:hover{
+    cursor: pointer;
 }
