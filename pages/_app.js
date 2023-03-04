@@ -1,9 +1,23 @@
 import '@/styles/globals.css'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function App({ Component, pageProps }) {
 
-  const [carrito, setCarrito] = useState([])
+  // verificamos que el contenido del carrito en el LS
+  //En caso de que window no este como undefined coloca lo que hay en locasStorage, en caso contrario coloca un []
+  // JSON.parse convierte el string a un arreglo nuevamente
+  // ?? [] en caso de que no exista carrito en el LS agrega un arreglo vacio []
+  const carritoLS = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('carrito')) ?? [] : []
+
+  const [carrito, setCarrito] = useState(carritoLS)
+
+  
+
+  useEffect( () => {
+    //Guardamos en local lo que tenga el jason e carrito pero en string
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+
+  }, [carrito])
 
 
   const agregarCarrito = guitarra => {
