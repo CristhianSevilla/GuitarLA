@@ -1,6 +1,6 @@
+import Link from "next/link"
 import Layout from "@/components/layout"
 import Guitarra from "@/components/guitarra"
-import curso from "@/components/curso"
 import Post from "@/components/post"
 import styles from 'styles/grid.module.css'
 import Curso from "@/components/curso"
@@ -20,7 +20,8 @@ export default function Home({ guitarras, posts, curso }) {
           <h1 className="heading">Nuestra colección</h1>
           <div className={styles.grid} >
 
-            {guitarras?.map(guitarra => (
+            {/* slice se trae las promeras 6 guitarras */}
+            {(guitarras?.slice(0, 6))?.map(guitarra => (
               <Guitarra
                 key={guitarra.id}
                 guitarra={guitarra.attributes}
@@ -28,10 +29,13 @@ export default function Home({ guitarras, posts, curso }) {
             ))}
 
           </div>
+          <div className="div-enlace">
+            <Link className="enlace" href="/tienda" >Ver todas</Link>
+          </div>
         </main>
 
-        <Curso 
-        curso={curso}
+        <Curso
+          curso={curso}
         >
 
         </Curso>
@@ -40,13 +44,18 @@ export default function Home({ guitarras, posts, curso }) {
           <h2 className="heading">Nuestro Blog</h2>
 
           <div className={styles.grid}>
-                    {posts.map(post => (
-                        <Post
-                            key={post.id}
-                            post={post.attributes}
-                        />
-                    ) )}
-                </div>
+
+            {(posts?.slice(0, 3))?.map(post => (
+              <Post
+                key={post.id}
+                post={post.attributes}
+              />
+            ))}
+
+          </div>
+          <div className="div-enlace">
+            <Link className="enlace" href="/blog" >Más consejos</Link>
+          </div>
         </section>
 
 
@@ -70,7 +79,7 @@ export async function getStaticProps() {
     fetch(urlCurso)
   ])
 
-  const [{ data: guitarras }, { data: posts }, {data: curso}] = await Promise.all([
+  const [{ data: guitarras }, { data: posts }, { data: curso }] = await Promise.all([
     resGuitarras.json(),
     restPosts.json(),
     resCurso.json()
