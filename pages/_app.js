@@ -11,8 +11,15 @@ export default function App({ Component, pageProps }) {
 
   const [carrito, setCarrito] = useState(carritoLS)
 
-  
+  //Hidratación
+  const [paginaLista, setPaginaLista] = useState(false)
 
+  useEffect( () => {
+    setPaginaLista(true)
+
+  }, [])
+
+  
   useEffect( () => {
     //Guardamos en local lo que tenga el jason e carrito pero en string
     localStorage.setItem('carrito', JSON.stringify(carrito))
@@ -77,10 +84,10 @@ export default function App({ Component, pageProps }) {
     window.localStorage.setItem('carrito', JSON.stringify( carrito ));
 }
 
-  return <Component {...pageProps}
+  return paginaLista ? <Component {...pageProps}
     carrito={carrito}
     agregarCarrito={agregarCarrito}
     actualizarCantidad={actualizarCantidad}
     eliminarProducto={eliminarProducto}
-  />
+  /> : null
 }
