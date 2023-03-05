@@ -23,6 +23,10 @@ function Footer() {
             Blog
           </Link>
 
+          <Link href="/carrito">
+            Carrito
+          </Link>
+
         </nav>
 
         <p className={styles.copyright}>Todos los derechos reservados {new Date().getFullYear()}</p>
