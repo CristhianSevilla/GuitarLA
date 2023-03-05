@@ -42,7 +42,7 @@ export default Tienda
 
 //Consultar la Api
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
     const respuesta = await fetch(`${process.env.API_URL}/guitarras?populate=imagen`)
     const { data: guitarras } = await respuesta.json()
