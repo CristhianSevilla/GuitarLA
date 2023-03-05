@@ -14,7 +14,7 @@ function Tienda({ guitarras }) {
             >
 
                 <main className="contenedor">
-                    <h1 className="heading">Nuestra Colección</h1>
+                    <h1 className="heading">Nuestra Tienda</h1>
 
                     <div className={styles.grid} >
 

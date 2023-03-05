@@ -17,7 +17,7 @@ export default function Home({ guitarras, posts, curso }) {
       >
 
         <main className="contenedor">
-          <h1 className="heading">Nuestra colección</h1>
+          <h1 className="heading">Nuestra Colección</h1>
           <div className={styles.grid} >
 
             {/* slice se trae las promeras 6 guitarras */}
