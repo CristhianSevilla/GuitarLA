@@ -1,7 +1,8 @@
 import { useState } from "react";
-import Image from "next/image"
-import styles from "../../styles/guitarras.module.css"
 import Layout from "@/components/layout"
+import Image from "next/image"
+import { mostrarAlerta } from "../../utils/helpers";
+import styles from "../../styles/guitarras.module.css"
 
 export default function Producto({ guitarra, agregarCarrito }) {
 
@@ -14,11 +15,11 @@ export default function Producto({ guitarra, agregarCarrito }) {
 
         //Validar cantidad
         if (cantidad < 1) {
-            alert('Cantidad no valida')
+            mostrarAlerta('Cantidad no valida', '', 'error')
             return
         }
 
-        //Construir un objeto con la guitarra seleccionada y almacenarla en LocaleStorage para no estra haciendo tabtas peticiones a nuestra API
+        //Construir un objeto con la guitarra seleccionada y almacenarla en LocaleStorage para no estar haciendo tantas peticiones a nuestra API
 
         const guitarraSeleccionada ={
 
@@ -31,7 +32,13 @@ export default function Producto({ guitarra, agregarCarrito }) {
 
         //Pasar el Objeto al context
         agregarCarrito(guitarraSeleccionada)
+
+        //Madar la alerta al usuario de que su carrito fue gregado
+        mostrarAlerta('Agregado con Éxito', '', 'success')
         
+        //Redireccionar al usuario a la tienda
+        
+
     }
 
     return (
