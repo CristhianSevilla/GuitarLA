@@ -28,8 +28,26 @@ function Blog({ post }) {
 
 export default Blog
 
-export async function getServerSideProps({ query: { url } }) {
-    // query es informacion que se pasa automaticamente en get server side props
+
+// Con getStaticPaths y getStaticProps las paginas se crean una sola vez cuando se hace build 
+
+export async function getStaticPaths() {
+    const respuesta = await fetch(`${process.env.API_URL}/posts`)
+    const { data } = await respuesta.json()
+
+    const paths = data.map(post => ({
+        params: {
+            url: post.attributes.url
+        }
+    }))
+
+    return {
+        paths,
+        fallback: false
+    }
+}
+
+export async function getStaticProps({ params: { url } }) {
 
     const respuesta = await fetch(`${process.env.API_URL}/posts?filters[url]=${url}&populate=imagen`)
     const { data: post } = await respuesta.json()
@@ -41,3 +59,17 @@ export async function getServerSideProps({ query: { url } }) {
         }
     }
 }
+
+// export async function getServerSideProps({ query: { url } }) {
+//     // query es informacion que se pasa automaticamente en get server side props
+
+//     const respuesta = await fetch(`${process.env.API_URL}/posts?filters[url]=${url}&populate=imagen`)
+//     const { data: post } = await respuesta.json()
+
+//     return {
+
+//         props: {
+//             post
+//         }
+//     }
+// }
