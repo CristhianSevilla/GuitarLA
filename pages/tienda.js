@@ -7,7 +7,6 @@ function Tienda({ guitarras }) {
     return (
 
         <>
-
             <Layout
                 title={'Tienda'}
                 description={'Tienda Virtual, Venta de guitarras y otros instrumentos músicales, GuitarLA'}
@@ -26,9 +25,7 @@ function Tienda({ guitarras }) {
                         ))}
 
                     </div>
-
                 </main>
-
 
             </Layout>
 

@@ -16,14 +16,12 @@ export default function App({ Component, pageProps }) {
 
   useEffect( () => {
     setPaginaLista(true)
-
   }, [])
 
   
   useEffect( () => {
     //Guardamos en local lo que tenga el jason e carrito pero en string
     localStorage.setItem('carrito', JSON.stringify(carrito))
-
   }, [carrito])
 
 

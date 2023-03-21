@@ -61,7 +61,6 @@ export default function Home({ guitarras, posts, curso }) {
 
       </Layout>
 
-
     </>
   )
 }
