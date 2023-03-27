@@ -3,25 +3,30 @@
     max-width: 70rem;
     margin: 0 auto;
 }
-@media(min-width: 768px) {
-        .guitarra{
-            display: grid;
-            grid-template-columns: 2fr 3fr;
-            gap: 1rem;
-        }
+
+@media (min-width: 768px) {
+    .guitarra {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
 }
+
 .contenido {
     padding: 1rem;
 }
+
 .contenido h3 {
     font-size: 3rem;
     text-transform: uppercase;
     color: var(--primary);
 }
-.descripcioncompleta{
+
+.descripcioncompleta {
     overflow: hidden;
     font-size: 1.8rem;
 }
+
 .descripcion {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -29,12 +34,14 @@
     overflow: hidden;
     font-size: 1.8rem;
 }
+
 .precio {
     color: var(--primary);
     font-size: 4rem;
     margin: 0;
     font-weight: 900;
 }
+
 .enlace {
     margin-top: 2rem;
     display: block;
@@ -49,25 +56,30 @@
     transition-property: background-color;
     transition-duration: 300ms;
 }
+
 .enlace:hover {
     background-color: var(--primary);
 }
-.formulario{
+
+.formulario {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     margin-top: 3rem;
 }
-.formulario label{
+
+.formulario label {
     font-size: 2.2rem;
 }
-.formulario select{
+
+.formulario select {
     border: 1px solid var(--black);
     padding: .5rem;
     text-align: center;
     border-radius: 1rem;
 }
-.formulario input[type="submit"]{
+
+.formulario input[type="submit"] {
     display: block;
     width: 100%;
     text-transform: uppercase;
@@ -79,7 +91,8 @@
     transition-property: background-color;
     transition-duration: 300ms;
 }
-.formulario input[type="submit"]:hover{
+
+.formulario input[type="submit"]:hover {
     background-color: var(--primary);
     cursor: pointer;
 }

@@ -21,7 +21,7 @@ export default function Home({ guitarras, posts, curso }) {
           <div className={styles.grid} >
 
             {/* slice se trae las promeras 6 guitarras */}
-            {(guitarras?.slice(0, 6))?.map(guitarra => (
+            {(guitarras?.slice(0, 3))?.map(guitarra => (
               <Guitarra
                 key={guitarra.id}
                 guitarra={guitarra.attributes}
