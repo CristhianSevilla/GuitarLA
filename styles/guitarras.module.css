@@ -4,14 +4,6 @@
     margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-    .guitarra {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-}
-
 .contenido {
     padding: 1rem;
 }
