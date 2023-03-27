@@ -19,13 +19,13 @@ function Nosotros() {
                     <Image src="/img/nosotros.jpg" width={1000} height={800} alt="Imágen sobre nosotros" />
 
                     <div>
-                        <p>Bienvenidos a nuestra tienda online de guitarras. Somos un equipo de músicos apasionados por la música y especialmente por la guitarra. Nuestra tienda nace con la intención de ofrecer a los amantes de la música una amplia selección de guitarras de alta calidad, para que puedan encontrar el instrumento que se adapte a sus necesidades y gustos musicales.</p>
+                        <p>Somos un equipo de músicos apasionados por la guitarra y queremos ofrecer una amplia selección de guitarras de alta calidad en nuestra tienda online para que los amantes de la música puedan encontrar el instrumento que se adapte a sus necesidades y gustos musicales.</p>
                         <p>
-                        Nos enorgullece ofrecer a nuestros clientes una experiencia de compra online sin igual. Además de contar con una gran variedad de marcas y modelos de guitarras, también ofrecemos una amplia gama de accesorios, amplificadores y otros instrumentos para complementar su experiencia musical.  
+                        Ofrecemos una excelente experiencia de compra en línea con una amplia selección de guitarras, accesorios, amplificadores e instrumentos para mejorar su experiencia musical.  
                         </p>
                         <p>Entendemos que comprar una guitarra es una inversión importante y es por eso que nos aseguramos de contar con un equipo altamente capacitado de expertos en guitarras, para poder ofrecer un servicio personalizado y atento a las necesidades de cada cliente. Siempre estamos dispuestos a responder cualquier pregunta y ayudar a nuestros clientes a encontrar el instrumento perfecto.</p>
-                        <p>En nuestra tienda, no sólo nos preocupamos por ofrecer guitarras de alta calidad, sino que también nos enfocamos en hacer que la experiencia de nuestros clientes sea excepcional desde el primer contacto hasta después de su compra. Trabajamos con proveedores de confianza y enviamos nuestros productos con rapidez y seguridad para garantizar que nuestros clientes reciban su compra en el menor tiempo posible.</p>
-                        <p>Agradecemos su interés en nuestra tienda y esperamos poder ayudarle a encontrar la guitarra perfecta para usted. ¡No dude en ponerse en contacto con nosotros si necesita ayuda en su búsqueda!</p>
+                        <p>En nuestra tienda, nos esforzamos por brindar tanto guitarras de alta calidad como una experiencia excepcional para nuestros clientes, desde el primer contacto hasta después de la compra. Trabajamos con proveedores confiables y enviamos productos rápidamente y de manera segura para garantizar una entrega rápida.</p>
+                        <p>Gracias por estar interesado en nuestra tienda. Esperamos poder ayudarte a encontrar la guitarra ideal para ti. Si necesitas ayuda en tu búsqueda, contáctanos sin dudarlo.</p>
                     </div>
                 </div>
                </main>
