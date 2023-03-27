@@ -1,4 +1,7 @@
 .guitarra {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
     align-items: center;
     max-width: 70rem;
     margin: 0 auto;
